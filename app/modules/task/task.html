@@ -1,0 +1,90 @@
+﻿<dashboard-component></dashboard-component>
+<div class="clearfix margin-bottom-30"></div>
+<div class="container">
+    
+    <form novalidate (ngSubmit)="onSubmit(userForm); modal1.hide()" [formGroup]="userForm" id="sky-form" class="sky-form">
+        <header style="text-align:left;">Tasks</header>
+        <fieldset>
+            <section>
+                <label class="label">Task</label>
+                <label class="input">
+                    <i class="icon-append fa fa-tasks"></i>
+                    <input formControlName="task" type="text" maxlength="100" placeholder="Add New Task" required />
+                    <b class="tooltip tooltip-bottom-right">Needed to enter the task</b>
+                </label>
+            </section>
+            <div class="row">
+                <section class="col col-6">
+                    <label class="label">Assign to</label>
+                    <label class="select">
+                        <select name="gender" formControlName="drpresources">
+                            <option value="">All Resources</option>
+                            <option *ngFor="let item of resources" [selected]="item.resourceId == lookupselected" value="{{item.resourceId}}">{{item.resourceName}}</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="label">Assign to customer</label>
+                    <label class="select">
+                        <select name="gender" formControlName="drpresources">
+                            <option value="">Select customer</option>
+                            <option *ngFor="let item of customers" [selected]="item.customerId == lookupselected" value="{{item.customerId}}">{{item.firstName}} {{item.lastName}}</option>
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col col-6">
+                    <label class="label">Due Date</label>
+                    <label class="input">
+                        <i class="icon-append fa fa-calendar"></i>
+                        <input type="text" name="start" id="start" placeholder="Start date" class="hasDatepicker">
+                        <!--<input formControlName="dueDate" type="text" name="start" id="start" placeholder="Due Date" class="hasDatepicker">-->
+                    </label>
+                    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: absolute; top: 185.969px; left: 428px; z-index: 1; display: none;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="<i class=&quot;fa fa-angle-left&quot;></i>"><span class="ui-icon ui-icon-circle-triangle-w"><i class="fa fa-angle-left"></i></span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="<i class=&quot;fa fa-angle-right&quot;></i>"><span class="ui-icon ui-icon-circle-triangle-e"><i class="fa fa-angle-right"></i></span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">January</span>&nbsp;<span class="ui-datepicker-year">2018</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th><span title="Monday">Mo</span></th><th><span title="Tuesday">Tu</span></th><th><span title="Wednesday">We</span></th><th><span title="Thursday">Th</span></th><th><span title="Friday">Fr</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-days-cell-over  ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default ui-state-highlight" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">5</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">6</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">12</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">13</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">19</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">20</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">26</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">27</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">29</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default ui-state-hover" href="#">30</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="0" data-year="2018"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div>
+                </section>
+                <section class="col col-6">
+                    <button type="submit" [disabled]="userForm.invalid" class="btn-u pull-right" style="margin-top:25px;">Post</button>
+                </section>
+            </div>
+        </fieldset>
+    </form>
+        <div class="clearfix margin-bottom-30"></div>
+        <div class="col-md-12 " style="display:none;">
+            <div class="panel">
+                <div class="panel-body">
+                    No tasks found.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" align="center">
+            <div class="panel-body">
+                <form novalidate (ngSubmit)="onSubmit(userForm); modal1.hide()" [formGroup]="userForm" id="sky-form3" class="sky-form" style="border:1px solid transparent;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Resource</th>
+                                <th>Customer</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Task here</td>
+                                <td>Resource here</td>
+                                <td>Ali</td>
+                                <td>14/12/2017</td>
+                                <td>Pending</td>
+                                <td><div class="inline-group" style="margin:0px 28px -5px 0;"><span><label class="checkbox"><input type="checkbox" value="isComplete" />&nbsp;&nbsp;<a style="cursor: pointer;" (click)="TaskIdForDelete(item.serviceId); modal2.show()"><i></i></a></label><i class="fa fa-trash-o zero-padding" style="padding-top:8px;"></i></span></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>      
+</div>

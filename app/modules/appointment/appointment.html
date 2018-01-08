@@ -1,0 +1,147 @@
+﻿<dashboard-component></dashboard-component>
+<!-- Modal -->
+<div class="clearfix margin-bottom-30"></div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content col-md-12 zero-padding">
+            <div class="modal-body zero-padding col-md-12 zero-padding">
+                <ul class="nav nav-pills nav-stacked col-md-3 zero-padding">
+                    <li class="active"><a ng-class="isItThirdPageB()" data-toggle="pill" href="#home"><span><i class="fa fa-calendar" aria-hidden="true"></i></span>&nbsp;&nbsp;Appointment</a></li>
+                    <li><a ng-class="isItThirdPageB()" data-toggle="pill" href="#menu1"><span><i class="fa fa-id-card-o" aria-hidden="true"></i></span>&nbsp;&nbsp;Class</a></li>
+                    <li><a ng-class="isItThirdPageB()" data-toggle="pill" href="#menu2"><span><i class="fa fa-id-card-o" aria-hidden="true"></i></span>&nbsp;&nbsp;Invitation</a></li>
+                    <li><a ng-class="isItThirdPageB()" data-toggle="pill" href="#menu3"><span><i class="fa fa-coffee" aria-hidden="true"></i></span>&nbsp;&nbsp;Break</a></li>
+                </ul>
+                <div id="home" class="tab-pane fade in active col-md-9" style="padding-bottom:20px;">
+                    <ol class="wizard-progress wizard-3-steps clearfix center-block" style="    height: 5px;">
+                        <li class="step-done">
+                            <span class="step-num">1</span>
+                            <span class="step-name"></span>
+                        </li>
+                        <li ng-class="isItSecondPage()">
+                            <span class="step-num">2</span>
+                            <span class="step-name"></span>
+                        </li>
+                        <li ng-class="isItThirdPage()">
+                            <span class="step-num">3</span>
+                            <span class="step-name"></span>
+                        </li>
+                    </ol>
+
+                    <form class="form-horizontal" ng-show="appointmentPage2">
+                        <div class="form-group cstm-padding">
+                            <label for="Service" class="control-label col-sm-2">Date:</label>
+                            <div class="col-md-offset-1 col-md-9">
+                                <!--<datepicker date-enabled-dates="{{enableDates}}" date-format="dd-MM-yyyy">
+                                    <input class="form-control" ng-change="dateChoised()" ng-model="date" type="text" />
+                                </datepicker>-->
+                            </div>
+                        </div>
+                        <div class="form-group cstm-padding">
+                            <label for="Service" class="col-md-2">Period:</label>
+                            <div class="col-md-offset-1 col-md-9">
+                                <select class="form-control" ng-model="selectedAppointmentperiod" ng-change="appointmentPeriodChanged()" ng-options="item.label  disable when item.id == '0' for item in periods"></select>
+                            </div>
+                        </div>
+                        <div class="form-group cstm-padding">
+                            <label for="Service" class="col-md-2">Time:</label>
+                            <div class=" col-md-9" style="
+									max-height: 200px;
+									    overflow-y: scroll;
+									    background: #fff;border: 1px solid #979797;border-radius: 4px;width: 306px;margin-left: 53px;">
+                                <div ng-if="availableTimings.length == 0">
+                                    <label>Sorry no time available</label>
+                                </div>
+                                <div ng-repeat="time in availableTimings">
+                                    <label class="btn-block">{{time}}<input ng-click="timeSelected(time)" type="radio" name="optradio" class="pull-right"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <label ng-if="errorOnPage2" style="margin-top: 20px;margin-left: 111px;" class="alert-danger">Please Choice all Option</label>
+                        <div class="form-group cstm-padding">
+                            <button ng-click="prePage()" style="margin-left: 12px;" type="button" class="btn btn-default">Previous</button>
+                            <button ng-click="nextPage()" style="margin-right: 16px;" type="button" class="btn btn-default pull-right">Next</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+
+                </div>
+                <div id="menu2" class="tab-pane fade">
+
+                </div>
+                <div id="menu3" class="tab-pane fade">
+
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+</div>
+<section class="col-md-12 admin_margin">
+    <div class="panel panel-green margin-bottom-40">
+        <div class="panel-heading">
+            <h3 class="panel-title" align="center"><span><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;&nbsp;{{todayDate}}&nbsp;&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span></h3>
+        </div>
+        <div class="panel-body">
+            <div class="tab-v2">
+                <ul class="nav nav-tabs">
+                    <li class="{{isDailyActive==true?'active':''}}"><a style="cursor:pointer;" (click)="changeTabs(true)" data-toggle="tab">Daily</a></li>
+                    <li class="{{isDailyActive==false?'active':''}}"><a style="cursor:pointer;" (click)="changeTabs(false)" data-toggle="tab">Weekly</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in {{isDailyActive==true?'active':''}}">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th *ngFor="let item of resources">
+                                        <strong>{{item.resourceName}}</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let timeItem of allTimes">
+                                    <td>
+                                        {{timeItem.time}}
+                                    </td>
+                                    <td *ngFor="let item of resources">
+                                        <!--<span ng-repeat="a in x.appointments">
+                                            {{timeItem.time==a.time?a.action:""}}
+                                        </span>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade in {{isDailyActive==false?'active':''}}">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th *ngFor="let item of weeklyDays">
+                                        <strong>{{item.weekday}} {{item.dayname}} {{item.monthname}}</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let timeItem of allTimes">
+                                    <td>
+                                        {{timeItem.time}}
+                                    </td>
+                                    <td *ngFor="let item of weeklyDays">
+                                        <!--<span ng-repeat="a in x.appointments">
+                        {{timeItem.time==a.time?a.action:""}}
+                    </span>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

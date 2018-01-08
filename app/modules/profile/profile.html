@@ -1,0 +1,104 @@
+﻿<dashboard-component></dashboard-component>
+<form novalidate (ngSubmit)="onSubmit(userForm);" [formGroup]="userForm">
+    <section class="col-md-12 admin_margin">
+        <div class="panel panel-green margin-bottom-40">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-tasks"></i>Profile</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <h3>Identity</h3>
+                    <label for="businessName">Business Name *</label>
+                    <input type="text" formControlName="businessName" maxlength="50" class="form-control" placeholder="Enter Business Name">
+                </div>
+                <div class="form-group">
+                    <label for="aboutYourBusiness">About your Business</label>
+                    <textarea formControlName="aboutYourBusiness" maxlength="2500" class="form-control" rows="7"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="logoForMarketingPath">Logo for marketing automation<i class="fa fa-info"></i></label>
+                    <input #fileupload0 (change)="fileChangeMicrosite(fileupload0.files, 0)" type="file" class="btn-u" />
+                </div>
+                <div class="form-group">
+                    <h3>Address</h3>
+                    <label for="street">Street Name</label>
+                    <input formControlName="street" type="text" maxlength="50" class="form-control" placeholder="Enter Street Name">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input formControlName="city" type="text" maxlength="50" class="form-control" placeholder="Enter City Name">
+                </div>
+                <div class="form-group">
+                    <label for="postCode">Postcode</label>
+                    <input formControlName="postCode" type="text" maxlength="50" class="form-control" placeholder="Enter Postcode Name">
+                </div>
+                <div class="form-group">
+                    <h3>Contact Details</h3>
+                    <label for="businessPhoneNumber">Business Phone Number</label>
+                    <input formControlName="businessPhoneNumber" type="text" maxlength="50" class="form-control" placeholder="Enter Business Phone Number">
+                </div>
+                <div class="form-group">
+                    <label for="businessWebsite">Business Website</label>
+                    <input formControlName="businessWebsite" type="text" maxlength="500" class="form-control" placeholder="Enter Business Website">
+                </div>
+                <div class="form-group">
+                    <h3>Communication Details</h3>
+                    <label for="mobileNumber">Mobile Number where we send the notification</label>
+                    <input formControlName="mobileNumber" type="text" maxlength="50" class="form-control" placeholder="Enter Street Name">
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input formControlName="emailAddress" type="email" maxlength="50" class="form-control" placeholder="Enter Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="otherEmailAddress">Other Email Address(where we send copies of your notification separted by commas)</label>
+                    <input formControlName="otherEmailAddress" type="email" maxlength="500" class="form-control" placeholder="e.g hello@appointmentor.com,info@appointmentor.com">
+                </div>
+                <div class="form-group">
+                    <label for="sendFromEmailAddress">Send Email Address(The email address shown to customer in email we send it own your behalf)</label>
+                    <input formControlName="sendFromEmailAddress" type="email" maxlength="50" class="form-control" placeholder="e.g hello@appointmentor.com">
+                </div>
+                <div class="form-group">
+                    <label for="sendFromNameForEmail">Send from Name for Email Address(The name shown to your customers in email we send it own your behalf)</label>
+                    <input formControlName="sendFromNameForEmail" type="email" maxlength="50" class="form-control" placeholder="e.g personal">
+                </div>
+                <div class="form-group">
+                    <label for="sendFromNameForSMS">Send from Name for SMS(The name shown to your customers in SMS we send it own your behalf(11 character max))</label>
+                    <input formControlName="sendFromNameForSMS" type="email" maxlength="11" class="form-control" id="eaddress" placeholder="@ appointedd">
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="profileImageForMicrosite1">Profile Image for microsite&nbsp;&nbsp;</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <input #fileupload1 (change)="fileChangeMicrosite(fileupload1.files, 1)" type="file" class="btn-u" />
+                            <input type="checkbox" formControlName="setAsDefaultMircrosite1" />
+                        </div>
+                        <div class="col-md-3">
+                            <input #fileupload2 (change)="fileChangeMicrosite(fileupload2.files, 2)" type="file" class="btn-u" />
+                            <input type="checkbox" formControlName="setAsDefaultMircrosite2" />
+                        </div>
+                        <div class="col-md-3">
+                            <input #fileupload3 (change)="fileChangeMicrosite(fileupload3.files, 3)" type="file" class="btn-u" />
+                            <input type="checkbox" formControlName="setAsDefaultMircrosite3" />
+                        </div>
+                        <div class="col-md-3">
+                            <input #fileupload4 (change)="fileChangeMicrosite(fileupload4.files, 4)" type="file" class="btn-u" />
+                            <input type="checkbox" formControlName="setAsDefaultMircrosite4" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label for="bannerImageForMicrosite">Banner Name for microsite&nbsp;&nbsp;<i class="fa fa-info"></i></label>
+                            <input #fileupload5 (change)="fileChangeMicrosite(fileupload5.files, 5)" type="file" class="btn-u" />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="userForm.invalid" class="btn-u  pull-right">Save Changes</button>
+            </div>
+        </div>
+    </section>
+</form>

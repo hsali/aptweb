@@ -1,0 +1,207 @@
+﻿<header>
+    <!--<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Admin
+                            <span class=""><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </a> 
+                        <ul class="dropdown-menu">
+                            <li><a disabled="true">Monthly Overview</a></li>
+                            <li><a [routerLink]="['/openingtimes']">Opening times</a></li>
+                            <li><a [routerLink]="['/services']">Services</a></li>
+                            <li><a [routerLink]="['/resources']">Resources</a></li>
+                            <li><a [routerLink]="['/asset']">Assets</a></li>
+                            <li><a disabled="true">Booking Apps</a></li>
+                            <li><a disabled="true">Reviews</a></li>
+                            <li><a disabled="true">Reports</a></li>
+                            <li><a disabled="true">Payment history</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Marketing
+                            <span class=""><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a disabled="true">Notifications</a></li>
+                            <li><a disabled="true">Campaigns</a></li>
+                        </ul>
+                    </li>
+                    <li><a disabled="true">Support</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Personal
+                            <span class=""><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a disabled="true">Booking microsite</a></li>
+                            <li><a disabled="true">Account profile</a></li>
+                            <li><a disabled="true">Billing</a></li>
+                            <li><a [routerLink]="['/account']">User Account</a></li>
+                            <li><a [routerLink]="['/logout']">Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class=""><i class="fa fa-cog fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" style="margin-top:0px;">
+                            <li><a [routerLink]="['/general']">General</a></li>
+                            <li><a [routerLink]="['/customersetting']">Customers</a></li>
+                            <li><a [routerLink]="['/usersetting']">Users</a></li>
+                            <li><a [routerLink]="['/emailsetting']">Emails</a></li>
+                            <li><a disabled="true">SMS</a></li>
+                            <li><a disabled="true">Accounting</a></li>
+                            <li><a disabled="true">Payments</a></li>
+                            <li><a disabled="true">EPoS</a></li>
+                            <li><a disabled="true">Microsite</a></li>
+                            <li><a disabled="true">Online Booking</a></li>
+                            <li><a disabled="true">Calendar sync</a></li>
+                            <li><a disabled="true">API</a></li>
+                            <li><a disabled="true">Webhooks</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>-->
+    <!----------------------------------------Navbar2--------------------------------------------------------->
+    <!--<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar1">
+
+                <ul class="nav navbar-nav">
+                    <li class="active"><a [routerLink]="['/appointment']">APPOINTMENTS</a></li>
+                    <li><a [routerLink]="['/customer']">CUSTOMERS</a></li>
+                    <li><a [routerLink]="['/task']">TASKS</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="zero-padding"><button type="button" class="btn-u" data-toggle="modal" data-target="#myModal" style="margin-top:8px;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Booking</button></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>-->
+</header>
+<div class="wrapper">
+    <div class="header">
+        <div class="container-fluid">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="fa fa-bars"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a [routerLink]="['/monthly-overview']">Monthly Overview</a></li>
+                            <li><a [routerLink]="['/openingtimes']">Opening times</a></li>
+                            <li><a [routerLink]="['/services']">Services</a></li>
+                            <li><a [routerLink]="['/resources']">Resources</a></li>
+                            <li><a [routerLink]="['/asset']">Assets</a></li>
+                            <li><a [routerLink]="['/bookingapps']">Booking Apps</a></li>
+                            <li><a [routerLink]="['/reviews']">Reviews</a></li>
+                            <li><a [routerLink]="['/reports']">Reports</a></li>
+                            <li><a [routerLink]="['/paymenthistory']">Payment history</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Marketing
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a [routerLink]="['/notifications']">Notifications</a></li>
+                            <li><a [routerLink]="['/campaigns']">Campaigns</a></li>
+                        </ul>
+                    </li>
+                    <li><a [routerLink]="['/support']">Support</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            {{organizationName}}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a [routerLink]="['/bookingmicrosite']">Booking microsite</a></li>
+                            <li><a [routerLink]="['/profile']">Account profile</a></li>
+                            <li><a [routerLink]="['/billing']">Billing</a></li>
+                            <li><a [routerLink]="['/account']">User Account</a></li>
+                            <li><a [routerLink]="['/logout']">Logout</a></li>
+                        </ul>
+                    </li>
+                   
+                    <li class="dropdown">
+                        <a class="dropdown-toggle delete" data-toggle="dropdown" href="#">
+                            <span class=""><i class="fa fa-cog fa-2x" aria-hidden="true"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a [routerLink]="['/general']">General</a></li>
+                            <li><a [routerLink]="['/customer']">Customers</a></li>
+                            <li><a [routerLink]="['/userssetting']">Users</a></li>
+                            <li><a [routerLink]="['/emailssetting']">Emails</a></li>
+                            <li><a [routerLink]="['/sms']">SMS</a></li>
+                            <li><a [routerLink]="['/accounting']">Accounting</a></li>
+                            <li><a [routerLink]="['/payments']">Payments</a></li>
+                            <li><a [routerLink]="['/epos']">EPoS</a></li>
+                            <li><a [routerLink]="['/microsite']">Microsite</a></li>
+                            <li><a [routerLink]="['/onlinebooking']">Online Booking</a></li>
+                            <li><a [routerLink]="['/calendarsync']">Calendar sync</a></li>
+                            <li><a [routerLink]="['/api']">API</a></li>
+                            <li><a [routerLink]="['/webhooks']">Webhooks</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+       </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse zero-padding" id="myNavbar1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a [routerLink]="['/appointment']">APPOINTMENTS</a></li>
+                    <li><a [routerLink]="['/customer']">CUSTOMERS</a></li>
+                    <li><a [routerLink]="['/task']">TASKS</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><button type="button" class="btn-u" data-toggle="modal" data-target="#myModal" style="margin-top:9px;margin-right: 27px;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Booking</button></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+

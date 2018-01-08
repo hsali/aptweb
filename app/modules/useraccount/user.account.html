@@ -1,0 +1,151 @@
+﻿<dashboard-component></dashboard-component>
+<br />
+<!--<form novalidate (ngSubmit)="onSubmit(userForm)" [formGroup]="userForm">
+    <section class="col-md-12 admin_margin">
+        <div *ngIf="!isPasswordMatch">
+            <div class="alert alert-info alert-dismissible">
+                <h4><i class="icon fa fa-"></i>Alert!</h4>
+                Passwords do not match. Please try again.
+            </div>
+        </div>
+        <div *ngIf="isSuccessfulMessage">
+            <div class="alert alert-success alert-dismissible">
+                <h4><i class="icon fa fa-"></i>Alert!</h4>
+                User account information has been saved successfully.
+            </div>
+        </div>
+        <div class="col-md-12 zero-padding">
+
+            <div class="panel panel-green margin-bottom-40">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-tasks"></i> User Account</h3>
+                </div>
+                <div class="panel-body col-md-12" style="border:1px solid #2ecc71;">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="firstName" class="col-lg-3 control-label">First Name*:</label>
+                            <div class="col-lg-9" style="padding-bottom:6px;">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input formControlName="firstName" maxlength="50" type="text" class="form-control" placeholder="First Name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="col-lg-3 control-label">Last Name*:</label>
+                            <div class="col-lg-9" style="padding-bottom:6px;">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input formControlName="lastName" maxlength="50" type="text" class="form-control" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputmobileno." class="col-lg-3 control-label">Email Address*:</label>
+                            <div class="col-lg-9" style="padding-bottom:6px;">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                    <input formControlName="emailAddress" disabled="disabled" maxlength="100" type="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-lg-3 control-label">Password*:</label>
+                            <div class="col-lg-9" style="padding-bottom:6px;">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                    <input formControlName="password" maxlength="100" type="password" class="form-control" placeholder="Password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword" class="col-lg-3 control-label">Confirm Password*:</label>
+                            <div class="col-lg-9">
+                                <div class="input-group" style="padding-bottom:6px;">
+                                    <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                    <input formControlName="confirmPassword" maxlength="100" type="password" class="form-control" placeholder="Confirm Password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>-->
+<div class="container">
+    <form action="assets/php/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form" novalidate (ngSubmit)="onSubmit(userForm)" [formGroup]="userForm">
+        <header align="left">User Account</header>
+        <section class="col-md-12 admin_margin">
+            <div *ngIf="!isPasswordMatch">
+                <div class="alert alert-info alert-dismissible">
+                    <h4><i class="icon fa fa-"></i>Alert!</h4>
+                    Passwords do not match. Please try again.
+                </div>
+            </div>
+            <div *ngIf="isSuccessfulMessage">
+                <div class="alert alert-success alert-dismissible">
+                    <h4><i class="icon fa fa-"></i>Alert!</h4>
+                    User account information has been saved successfully.
+                </div>
+            </div>
+        </section>
+        <fieldset>
+            <div class="row">
+                <section class="col col-6">
+                    <label class="label">First Name</label>
+                    <label class="input">
+                        <i class="icon-append fa fa-user"></i>
+                        <input formControlName="firstName" maxlength="50" type="text" class="form-control" placeholder="First Name" required>
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="label">Last Name</label>
+                    <label class="input">
+                        <i class="icon-append fa fa-user"></i>
+                        <input formControlName="lastName" maxlength="50" type="text" class="form-control" placeholder="Last Name" required>
+                    </label>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col col-6">
+                    <label class="label">E-mail</label>
+                    <label class="input">
+                        <i class="icon-append fa fa-envelope-o"></i>
+                        <input formControlName="emailAddress" disabled="disabled" maxlength="100" type="email" class="form-control" placeholder="Email Address" required>
+                    </label>
+                </section>
+                <section class="col col-6">
+                    <label class="label">Password</label>
+                    <label class="input">
+                        <i class="icon-append fa fa-key"></i>
+                        <input formControlName="password" maxlength="100" type="password" class="form-control" placeholder="Password" required>
+                    </label>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col col-6">
+                    <label class="label"> Confirm Password*</label>
+                    <label class="input">
+                        <i class="icon-append fa fa-key"></i>
+                        <input formControlName="confirmPassword" maxlength="100" type="password" class="form-control" placeholder="Confirm Password" required>
+                    </label>
+                </section>
+                <section class="col col-6"></section>
+            </div>
+            <footer>
+                <button type="submit" class="button">Save Changes</button>
+            </footer>
+        </fieldset>
+        <div class="message">
+            <i class="rounded-x fa fa-check"></i>
+            <p>Your message was successfully sent!</p>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"file":"bookingquestiondetail.component.js","sourceRoot":"","sources":["bookingquestiondetail.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAAkD;AAKlD,IAAa,8BAA8B;IAA3C;IAGA,CAAC;IAFG,iDAAQ,GAAR;IACA,CAAC;IACL,qCAAC;AAAD,CAAC,AAHD,IAGC;AAHY,8BAA8B;IAJ1C,gBAAS,CAAC;QACP,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,WAAW,EAAE,4BAA4B;KAC5C,CAAC;GACW,8BAA8B,CAG1C;AAHY,wEAA8B"}

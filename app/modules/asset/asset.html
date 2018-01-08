@@ -1,0 +1,46 @@
+﻿<dashboard-component></dashboard-component>
+<div class="container" style="text-align:left;">
+    <div class="row">
+        <section>
+            <div class="wizard">
+                <form novalidate (ngSubmit)="onSubmit(userForm)" [formGroup]="userForm" id="sky-form3" class="sky-form">
+                    <div class="tab-content">
+                            <header>Assets</header>
+                        <fieldset>
+                                <div class="row">
+                                    <section class="col col-6">
+                                        <label class="label">Name</label>
+                                        <label class="input">
+                                            <i class="icon-append fa fa-user"></i>
+                                            <input type="text" name="name" id="name">
+                                        </label>
+                                    </section>
+                                    <section class="col col-6">
+                                        <label class="label">Quantity</label>
+                                        <label class="input">
+                                            <i class="icon-append fa fa-at"></i>
+                                            <input type="number" name="quantity" id="quantity">
+                                        </label>
+                                    </section>
+                                </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Services that require this asset to be available<span class="pull-right"><a (click)="CheckAll()" style="cursor:pointer;">Check All</a>&nbsp;&nbsp;<a (click)="UncheckAll()" style="cursor:pointer;">Uncheck All</a></span>
+                                </div>
+                                <div class="panel-body">
+                                    <div align="left" class="panel panel-default col-md-12" style="padding-bottom:15px;padding-top:12px;">
+                                            <label class="checkbox" *ngFor="let item of services">{{item.serviceName}}&nbsp;<input (change)="onChange(item.serviceId, $event)" [checked]="isCheckAll || isServiceChecked(item.serviceId)" type="checkbox" value="{{item.serviceId}}"><i ></i></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <footer class="asset-footer">
+                                <button type="submit" [disabled]="userForm.invalid" class="button">{{savebuttonText}} Assets</button>
+                        </footer>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
